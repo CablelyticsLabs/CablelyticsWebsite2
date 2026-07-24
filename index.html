@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!-- ============================================================================
+     CABLELYTICS — HOME PAGE
+     ----------------------------------------------------------------------------
+     HOW THIS FILE IS ORGANIZED (search for these comment markers to jump around):
+       [HEAD]        — page title, description, fonts
+       [HEADER]      — top navigation + Solutions dropdown  (same on every page)
+       [HERO]        — big intro banner
+       [SOLUTIONS]   — services cards
+       [STATS]       — the 25 / 587 / 101 / 18 numbers
+       [WHY]         — credibility / why choose us
+       [TESTIMONIAL] — customer quotes
+       [CONTACT]     — Book-a-meeting form (Netlify)
+       [FOOTER]      — bottom of every page
+
+     TO EDIT TEXT: just change the words between the tags. To add a section,
+     copy an existing <section>…</section> block and edit it.
+     ========================================================================= -->
+<html lang="en">
+<head>
+  <!-- ===================== [HEAD] ===================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cablelytics | Telecommunications, Electrical &amp; DAS Infrastructure Experts</title>
+  <meta name="description" content="Cablelytics designs and installs Distributed Antenna Systems (DAS), Public Safety DAS, wireless networks, fiber, and full commercial electrical systems for enterprises everywhere. Certified, analytical, and trusted by industry leaders." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts: Sora (headlines) + Manrope (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Site stylesheet -->
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== [HEADER] =====================
+       This header block is identical on every page. If you change a nav link,
+       update it on every .html file (home, solutions, success, quality,
+       about, contact). -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="nav__logo" aria-label="Cablelytics home">
+        <img src="assets/cablelytics-logo.png" alt="Cablelytics" />
+      </a>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a class="nav__link is-active" href="index.html">Home</a></li>
+
+        <!-- Solutions dropdown -->
+        <li class="has-dropdown">
+          <a class="nav__link dropdown-toggle" href="solutions.html" aria-haspopup="true">Solutions</a>
+          <div class="dropdown" role="menu">
+            <a class="dropdown__item" href="solutions.html#das" role="menuitem">
+              <span class="ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M12 8V4M5 12H3m18 0h-2M7.8 7.8 6.3 6.3m11.4 0-1.5 1.5"/><circle cx="12" cy="12" r="3"/></svg>
+              </span>
+              <div><b>Distributed Antenna Systems</b><span>In-building DAS for seamless cellular coverage.</span></div>
+            </a>
+            <a class="dropdown__item" href="solutions.html#public-safety" role="menuitem">
+              <span class="ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3Z"/></svg>
+              </span>
+              <div><b>Public Safety DAS</b><span>Code-compliant first-responder communications.</span></div>
+            </a>
+            <a class="dropdown__item" href="solutions.html#wireless" role="menuitem">
+              <span class="ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14 0M8.5 16a6 6 0 0 1 7 0M2 8.82a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1"/></svg>
+              </span>
+              <div><b>Wireless &amp; Small Cell</b><span>WiFi, private LTE/5G, and small cell deployment.</span></div>
+            </a>
+            <a class="dropdown__item" href="solutions.html#fiber" role="menuitem">
+              <span class="ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4c8 0 8 16 16 16M4 20c4 0 6-4 8-8"/></svg>
+              </span>
+              <div><b>Fiber &amp; Structured Cabling</b><span>High-capacity backbone and low-voltage cabling.</span></div>
+            </a>
+            <a class="dropdown__item" href="solutions.html#electrical" role="menuitem">
+              <span class="ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+              </span>
+              <div><b>Electrical &amp; EV Charging</b><span>Licensed FL electrical install &amp; EV stations.</span></div>
+            </a>
+
+            <!-- Software / Cablelytics Labs — external link -->
+            <a class="dropdown__item dropdown__item--feature" href="https://cablelyticslabs.io" target="_blank" rel="noopener" role="menuitem">
+              <span class="ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 17-5-5 5-5M16 7l5 5-5 5"/></svg>
+              </span>
+              <div><b>Software — Cablelytics Labs <span class="dropdown__ext">↗</span></b><span>AI, dashboards &amp; custom software builds.</span></div>
+            </a>
+          </div>
+        </li>
+
+        <li><a class="nav__link" href="success.html">Customer Success</a></li>
+        <li><a class="nav__link" href="quality.html">Quality Assurance</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li class="nav__cta"><a class="btn btn--gold btn--sm" href="contact.html#book">Book a Meeting</a></li>
+      </ul>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== [HERO] ===================== -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__inner">
+          <span class="eyebrow" style="color:var(--gold)">An Analytical Approach to Connectivity</span>
+          <h1>The experts in <span class="accent">wireless, DAS &amp; electrical</span> infrastructure.</h1>
+          <p class="hero__sub">From Public Safety DAS to fiber, small cell, and full commercial electrical installs — Cablelytics designs, builds, and certifies the systems that keep buildings connected and people safe, wherever they operate.</p>
+          <div class="hero__cta">
+            <a class="btn btn--gold btn--lg" href="contact.html#book">Book a Meeting</a>
+            <a class="btn btn--ghost-light btn--lg" href="solutions.html">Explore Solutions</a>
+          </div>
+        </div>
+        <!-- Trust strip: quick credibility signals -->
+        <div class="hero__trust">
+          <span><i class="dot"></i> Licensed Electrical Contractor</span>
+          <span><i class="dot"></i> Proud APCO Member</span>
+          <span><i class="dot"></i> 25+ Years of Field Experience</span>
+          <span><i class="dot"></i> Trusted by Enterprises Nationwide</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== [SOLUTIONS] ===================== -->
+    <section class="section" id="solutions">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">What We Do</span>
+          <h2>Engineered solutions for connected, code-compliant buildings.</h2>
+          <p>One accountable partner for the systems most companies juggle across three or four vendors — design, installation, commissioning, and certification under one roof.</p>
+        </div>
+
+        <div class="solutions-grid">
+          <!-- Card 1 -->
+          <article class="solution-card reveal">
+            <div class="solution-card__media"><img src="assets/small-cell.jpg" alt="Distributed antenna system equipment" loading="lazy" /></div>
+            <div class="solution-card__body">
+              <h3>Distributed Antenna Systems</h3>
+              <p>Seamless in-building cellular coverage for offices, hospitals, stadiums, airports, and high-traffic facilities where signal can't fail.</p>
+              <a class="solution-card__link" href="solutions.html#das">Learn more</a>
+            </div>
+          </article>
+          <!-- Card 2 -->
+          <article class="solution-card reveal">
+            <div class="solution-card__media"><img src="assets/public-safety.jpg" alt="Firefighter relying on public safety communications" loading="lazy" /></div>
+            <div class="solution-card__body">
+              <h3>Public Safety DAS</h3>
+              <p>ERRCS systems that meet NFPA &amp; IFC code so first responders stay connected indoors — often the difference between life and death.</p>
+              <a class="solution-card__link" href="solutions.html#public-safety">Learn more</a>
+            </div>
+          </article>
+          <!-- Card 3 -->
+          <article class="solution-card reveal">
+            <div class="solution-card__media"><img src="assets/cbrs.jpg" alt="Wireless and small cell antenna" loading="lazy" /></div>
+            <div class="solution-card__body">
+              <h3>Wireless, WiFi &amp; Small Cell</h3>
+              <p>WiFi design, interference tracking, private LTE/5G (CBRS), and small cell deployment that boosts capacity and productivity.</p>
+              <a class="solution-card__link" href="solutions.html#wireless">Learn more</a>
+            </div>
+          </article>
+          <!-- Card 4 -->
+          <article class="solution-card reveal">
+            <div class="solution-card__media"><img src="assets/fiber-optics.jpg" alt="Fiber optic cabling" loading="lazy" /></div>
+            <div class="solution-card__body">
+              <h3>Fiber &amp; Structured Cabling</h3>
+              <p>High-capacity fiber backbone and low-voltage structured cabling — the reliable foundation under every system we install.</p>
+              <a class="solution-card__link" href="solutions.html#fiber">Learn more</a>
+            </div>
+          </article>
+          <!-- Card 5 -->
+          <article class="solution-card reveal">
+            <div class="solution-card__media"><img src="assets/electrical.jpg" alt="Electrical installation work" loading="lazy" /></div>
+            <div class="solution-card__body">
+              <h3>Electrical &amp; EV Charging</h3>
+              <p>As a licensed electrical contractor, we handle full commercial installs and EV charging stations end-to-end.</p>
+              <a class="solution-card__link" href="solutions.html#electrical">Learn more</a>
+            </div>
+          </article>
+          <!-- Card 6 — Software (Cablelytics Labs) external -->
+          <article class="solution-card reveal">
+            <div class="solution-card__media" style="background:linear-gradient(120deg,var(--blue),var(--navy));display:grid;place-items:center">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#F1CC01" stroke-width="1.5" aria-hidden="true"><path d="m8 17-5-5 5-5M16 7l5 5-5 5M13 4l-2 16"/></svg>
+            </div>
+            <div class="solution-card__body">
+              <h3>Software — Cablelytics Labs</h3>
+              <p>Our software division builds AI tools, dashboards, and custom applications for small and mid-sized businesses.</p>
+              <a class="solution-card__link" href="https://cablelyticslabs.io" target="_blank" rel="noopener">Visit Cablelytics Labs ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== [STATS] =====================
+         Numbers count up when scrolled into view. Edit the data-count value
+         AND the visible number, plus the label below it. -->
+    <section class="section section--dark section--tight">
+      <div class="container">
+        <div class="stats">
+          <div class="stat reveal">
+            <div class="stat__num"><span data-count="25">0</span><span class="suffix">+</span></div>
+            <div class="stat__label">Years Experience</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num"><span data-count="587">0</span></div>
+            <div class="stat__label">Projects Delivered</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num"><span data-count="101">0</span></div>
+            <div class="stat__label">Customers</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num"><span data-count="18">0</span></div>
+            <div class="stat__label">Major Clients</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== [WHY] — credibility split ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="split__media reveal">
+            <img src="assets/fiber-optics.jpg" alt="Fiber optic network installation by Cablelytics" loading="lazy" />
+          </div>
+          <div class="reveal">
+            <span class="eyebrow">Why Cablelytics</span>
+            <h2>The analytical edge that industry leaders count on.</h2>
+            <p>For more than two decades, our engineers and technicians have designed and installed systems for enterprises across healthcare, energy, telecom, transportation, education, and retail — on sites of every scale. We pair rigorous RF engineering with hands-on field execution — and we stand behind every closeout package.</p>
+            <ul class="checklist">
+              <li>Single accountable partner from survey to commissioning</li>
+              <li>Carrier coordination &amp; AHJ code compliance handled for you</li>
+              <li>Detailed closeout documentation on every deployment</li>
+              <li>Licensed, insured, and certified across telecom &amp; electrical</li>
+            </ul>
+            <a class="btn btn--blue" href="about.html" style="margin-top:28px">Learn About Our Company</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== [CUSTOMER SUCCESS CAROUSEL] =====================
+         An auto-scrolling row of the site types we build for. The card list is
+         duplicated below (aria-hidden on the copy) so the loop is seamless —
+         if you add or remove a card, do it in BOTH lists.
+         Speed is controlled by .marquee__track animation-duration in styles.css.
+         ==================================================================== -->
+    <section class="section section--cloud section--marquee">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Customer Success</span>
+          <h2>Trusted when communication can't fail.</h2>
+          <p class="lede" style="max-width:720px;margin:16px auto 0">From big box retail floors to hospital campuses and stadium bowls — these are the environments where coverage has to work the first time, every time.</p>
+        </div>
+      </div>
+
+      <div class="carousel" data-carousel>
+        <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Previous projects" data-carousel-prev>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+
+        <div class="carousel__viewport" data-carousel-viewport role="region" aria-label="Project types Cablelytics delivers">
+          <div class="carousel__track" data-carousel-track>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/bigbox-retail.jpg" alt="Big Box Stores project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Big Box Stores</span>
+                <h3>Big Box Stores</h3>
+                <p>Full-store cellular and Wi-Fi coverage across sales floors, stockrooms, and receiving docks — installed on off-hours schedules so the doors never close.</p>
+              </div>
+            </article>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/medical-tr.jpg" alt="Large Medical Centers project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Healthcare</span>
+                <h3>Large Medical Centers</h3>
+                <p>Campus-wide DAS and structured cabling that hold signal through shielded imaging suites and concrete cores, so clinical staff and first responders stay connected.</p>
+              </div>
+            </article>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/public-safety-bda.jpg" alt="Major Hotels project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Public Safety</span>
+                <h3>Major Hotels</h3>
+                <p>Public Safety DAS and guest-facing wireless engineered together, passing AHJ acceptance the first time so openings and renovations stay on schedule.</p>
+              </div>
+            </article>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/das-taps.jpg" alt="Large Convention Centers project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Convention Centers</span>
+                <h3>Large Convention Centers</h3>
+                <p>High-density DAS and fiber backbone built for exhibit halls that go from empty to twenty thousand people overnight without dropping a connection.</p>
+              </div>
+            </article>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/network-rack.jpg" alt="Large Universities project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Higher Education</span>
+                <h3>Large Universities</h3>
+                <p>Multi-building fiber, wireless, and DAS tied into one documented network — deployed in phases around academic calendars and move-in weekends.</p>
+              </div>
+            </article>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/public-safety-bbu.jpg" alt="Professional Sports Stadiums project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Stadiums</span>
+                <h3>Professional Sports Stadiums</h3>
+                <p>Bowl-wide coverage and public safety communications designed for peak-crowd load, with monitored backup power keeping emergency radio live.</p>
+              </div>
+            </article>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/warehouse-racking.jpg" alt="Large Warehouses project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Warehouses</span>
+                <h3>Large Warehouses</h3>
+                <p>RF-modeled coverage through steel racking and refrigerated zones so scanners, forklifts, and safety radios stay online end to end.</p>
+              </div>
+            </article>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/electrical-gear.jpg" alt="Large Schools project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Electrical</span>
+                <h3>Large Schools</h3>
+                <p>Low-voltage cabling, wireless, and licensed electrical from one accountable team — completed inside summer break windows.</p>
+              </div>
+            </article>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/warehouse-stock.jpg" alt="Amusement Parks project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Amusement Parks</span>
+                <h3>Amusement Parks</h3>
+                <p>Outdoor-rated distributed coverage across midways, queues, and back-of-house, engineered to survive weather, vibration, and constant crowd density.</p>
+              </div>
+            </article>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/medical-bm102.jpg" alt="Fire Stations project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Public Sector</span>
+                <h3>Fire Stations</h3>
+                <p>Hardened communications, alerting infrastructure, and backup power for facilities where a dropped signal is never an acceptable outcome.</p>
+              </div>
+            </article>
+            <article class="sector-card">
+              <div class="sector-card__media"><img src="assets/projects/bigbox-retail.jpg" alt="Dealerships project by Cablelytics" loading="lazy" /></div>
+              <div class="sector-card__body">
+                <span class="sector-card__tag">Automotive</span>
+                <h3>Dealerships</h3>
+                <p>Showroom, service bay, and lot-wide coverage on a single documented system that keeps sales tablets and service tickets moving.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Next projects" data-carousel-next>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="carousel__dots" data-carousel-dots aria-label="Jump to project"></div>
+
+      <div class="container" style="text-align:center;margin-top:32px">
+        <a class="btn btn--blue" href="success.html">See What We Deliver on Sites Like Yours</a>
+      </div>
+    </section>
+
+    <!-- ===================== [CONTACT] — Netlify form ===================== -->
+    <section class="section" id="book">
+      <div class="container">
+        <div class="split">
+          <div class="reveal">
+            <span class="eyebrow">Book a Meeting</span>
+            <h2>Let's scope your project.</h2>
+            <p>Tell us what you're building. We'll follow up to schedule a free consultation with an engineer who knows your system inside and out.</p>
+
+            <!-- Quick contact facts -->
+            <ul class="checklist" style="margin-top:28px">
+              <li><strong>Call:</strong>&nbsp;<a href="tel:+18137276728" style="color:var(--blue);font-weight:700">(813) 727-6728</a></li>
+              <li><strong>Email:</strong>&nbsp;<a href="mailto:info@cablelytics.com" style="color:var(--blue);font-weight:700">info@cablelytics.com</a></li>
+              <li><strong>Visit:</strong>&nbsp;510 East Windorst Rd, Brandon, FL 33510</li>
+              <li><strong>Hours:</strong>&nbsp;Mon–Fri, 9:00 AM – 5:00 PM</li>
+            </ul>
+          </div>
+
+          <!-- ↓↓↓ NETLIFY CONTACT FORM ↓↓↓
+               data-netlify="true" enables Netlify form capture.
+               The hidden "form-name" input is REQUIRED by Netlify.
+               Submissions appear in your Netlify dashboard → Forms. -->
+          <div class="form-card reveal">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+              <!-- Required hidden field so Netlify knows which form this is -->
+              <input type="hidden" name="form-name" value="contact" />
+              <!-- Honeypot field to fight spam (hidden from people) -->
+              <p class="hidden-field">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="name">Name <span class="req">*</span></label>
+                  <input id="name" name="name" type="text" required placeholder="Jane Smith" />
+                </div>
+                <div class="field">
+                  <label for="company">Company</label>
+                  <input id="company" name="company" type="text" placeholder="Acme Corp" />
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="email">Email <span class="req">*</span></label>
+                  <input id="email" name="email" type="email" required placeholder="jane@company.com" />
+                </div>
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" placeholder="(813) 555-0100" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="service">What do you need? <span class="req">*</span></label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Select a solution…</option>
+                  <option>Distributed Antenna Systems (DAS)</option>
+                  <option>Public Safety DAS</option>
+                  <option>Wireless / WiFi / Small Cell</option>
+                  <option>Fiber &amp; Structured Cabling</option>
+                  <option>Electrical &amp; EV Charging</option>
+                  <option>Software (Cablelytics Labs)</option>
+                  <option>Other / Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Project details <span class="req">*</span></label>
+                <textarea id="message" name="message" required placeholder="Building type, square footage, timeline, and what you're trying to achieve…"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--gold btn--lg" style="width:100%">Request My Consultation</button>
+              <p class="form-note">We typically respond within one business day.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== [FOOTER] =====================
+       Identical on every page. Update contact info here and copy to all pages. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/cablelytics-logo-footer.png" alt="Cablelytics" />
+          <p>An analytical approach to telecommunications, wireless infrastructure, and electrical systems — engineered, installed, and certified by Cablelytics.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="solutions.html#das">Distributed Antenna Systems</a></li>
+            <li><a href="solutions.html#public-safety">Public Safety DAS</a></li>
+            <li><a href="solutions.html#wireless">Wireless &amp; Small Cell</a></li>
+            <li><a href="solutions.html#fiber">Fiber &amp; Cabling</a></li>
+            <li><a href="solutions.html#electrical">Electrical &amp; EV</a></li>
+            <li><a href="https://cablelyticslabs.io" target="_blank" rel="noopener">Software — Cablelytics Labs ↗</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="success.html">Customer Success</a></li>
+            <li><a href="quality.html">Quality Assurance</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html#book">Book a Meeting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><span class="ico" aria-hidden="true">📍</span> 510 East Windorst Rd, Brandon, FL 33510</li>
+            <li><span class="ico" aria-hidden="true">📞</span> <a href="tel:+18137276728">(813) 727-6728</a></li>
+            <li><span class="ico" aria-hidden="true">✉️</span> <a href="mailto:info@cablelytics.com">info@cablelytics.com</a></li>
+            <li><span class="ico" aria-hidden="true">🕘</span> Mon–Fri, 9:00 AM – 5:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cablelytics LLC. All rights reserved.</span>
+        <div class="footer-badges">
+          <span>Licensed Electrical Contractor</span>
+          <span>APCO Member</span>
+          <span>Fully Insured</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Site JavaScript (menu, dropdown, reveal, counters) -->
+  <script src="assets/main.js"></script>
+</body>
+</html>

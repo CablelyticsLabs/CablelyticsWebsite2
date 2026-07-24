@@ -5,7 +5,7 @@
      1. BRAND SETTINGS  (colors, fonts, spacing — EDIT THESE to re-theme)
      2. Base & resets
      3. Layout helpers
-     4. Header / navigation (incl. Solutions dropdown)
+     4. Header / navigation
      5. Buttons & calls-to-action
      6. Hero
      7. Sections (solutions, stats, testimonials, etc.)
@@ -152,7 +152,7 @@ p { color: var(--slate); }
 /* ============================================================================
    4. HEADER / NAVIGATION
    ----------------------------------------------------------------------------
-   Light, clean header. Includes the Solutions dropdown menu.
+   Light, clean header. All nav items are plain links.
    ========================================================================== */
 .site-header {
   position: sticky;
@@ -192,71 +192,6 @@ p { color: var(--slate); }
 .nav__link:hover { color: var(--blue); background: var(--cloud); }
 .nav__link.is-active { color: var(--blue); }
 
-/* ---- Solutions dropdown ---- */
-.has-dropdown { position: relative; }
-
-.dropdown-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
-.dropdown-toggle::after {            /* little chevron */
-  content: "";
-  width: 7px; height: 7px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg) translateY(-2px);
-  transition: transform .2s var(--ease);
-  opacity: .6;
-}
-.has-dropdown:hover .dropdown-toggle::after,
-.has-dropdown:focus-within .dropdown-toggle::after { transform: rotate(225deg) translateY(2px); }
-
-.dropdown {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  min-width: 290px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-lg);
-  padding: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
-}
-.has-dropdown:hover .dropdown,
-.has-dropdown:focus-within .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
-.dropdown__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 11px 12px;
-  border-radius: var(--radius-sm);
-  transition: background .15s var(--ease);
-}
-.dropdown__item:hover { background: var(--cloud); }
-.dropdown__item .ico {
-  flex: none;
-  width: 34px; height: 34px;
-  display: grid; place-items: center;
-  background: rgba(46,58,144,0.08);
-  border-radius: 8px;
-  color: var(--blue);
-}
-.dropdown__item b { display: block; font-family: var(--font-display); font-size: 0.95rem; color: var(--ink); }
-.dropdown__item span { font-size: 0.82rem; color: var(--slate); line-height: 1.35; }
-
-/* Highlighted external item (Software / Cablelytics Labs) */
-.dropdown__item--feature {
-  background: linear-gradient(120deg, rgba(46,58,144,0.06), rgba(241,204,1,0.10));
-  margin-top: 6px;
-}
-.dropdown__item--feature .ico { background: var(--blue); color: var(--gold); }
-.dropdown__ext { font-size: 0.7rem; color: var(--blue); font-weight: 700; }
 
 /* Mobile hamburger button (hidden on desktop) */
 .nav__toggle {
@@ -292,6 +227,26 @@ p { color: var(--slate); }
   white-space: nowrap;
 }
 .btn:hover { transform: translateY(-2px); }
+
+/* ---- Centered button wrapper ----------------------------------------------
+   Wrap any .btn in <div class="btn-center"> to center it horizontally,
+   regardless of how the surrounding text is aligned. Used on the home page
+   for "Learn About Our Company" and "See What We Deliver on Sites Like Yours".
+   -------------------------------------------------------------------------- */
+.btn-center { display: flex; justify-content: center; width: 100%; }
+
+/* Long button labels must not overflow narrow screens: allow the text to wrap
+   onto a second line and cap the button at the container width. */
+@media (max-width: 760px) {
+  .btn {
+    max-width: 100%;
+    white-space: normal;      /* let long labels wrap instead of overflowing */
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 .btn:active { transform: translateY(0); }
 
 /* Primary = gold "Book a meeting" — the main action everywhere */
@@ -740,19 +695,6 @@ p { color: var(--slate); }
   .nav__cta { margin-top: 8px; }
   .nav__cta .btn { width: 100%; }
 
-  /* On mobile "Solutions" is a PLAIN LINK to solutions.html — the submenu is
-     hidden completely and the chevron is removed, so it looks and behaves
-     exactly like Home, About, and Contact. The dropdown still works on
-     desktop (hover), which is handled outside this media query. */
-  .has-dropdown { width: 100%; }
-  .dropdown,
-  .has-dropdown.is-open .dropdown,
-  .has-dropdown:hover .dropdown,
-  .has-dropdown:focus-within .dropdown {
-    display: none !important;
-  }
-  .dropdown-toggle::after { display: none; }   /* remove the chevron */
-  .dropdown-toggle { justify-content: flex-start; }
 
   .field-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }

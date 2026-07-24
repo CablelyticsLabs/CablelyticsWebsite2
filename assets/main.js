@@ -4,7 +4,7 @@
    Four small features, each in its own block so you can edit or remove one
    without touching the others:
      A. Mobile menu open/close (hamburger)
-     B. Solutions dropdown toggle on mobile (tap to expand)
+     B. Customer Success carousel (arrows, dots, slow autoplay)
      C. Scroll-reveal animation for elements with class "reveal"
      D. Animated number count-up for the stats section
    No frameworks, no libraries.
@@ -31,12 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ---- B. SOLUTIONS DROPDOWN --------------------------------------------- */
-  // Desktop only: the dropdown opens on hover via CSS — no JS needed.
-  // On mobile the submenu is hidden entirely (see styles.css) and "Solutions"
-  // behaves as an ordinary link straight to solutions.html.
-
-  /* ---- B2. CUSTOMER SUCCESS CAROUSEL ------------------------------------- */
+  /* ---- B. CUSTOMER SUCCESS CAROUSEL ------------------------------------- */
   // Native horizontal scrolling + arrows + dots. Auto-advances slowly and
   // pauses whenever the user hovers, focuses, or touches it.
   //
